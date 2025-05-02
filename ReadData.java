@@ -35,8 +35,11 @@ public class ReadData{
     //this should return a double array of the column
     //of data
     public double[][] getColumns(int col1, int col2){
-        double[][] columns = ...
-        ...
+        double[][] columns = new double[2][data.length];
+        for (int row = 0; row < data.length; row++){
+            columns[row][0] = data[row][col1];
+            columns[row][1] = data[row][col2];
+        }
         return columns;
     }
 
@@ -62,8 +65,16 @@ public class ReadData{
     //of values
     public double[] mean(double[][] xy){
         double sum = 0;
-        ...
-        return ...;
+        double[] temp = new double[xy[0].length];
+        for(int i = 0; i < xy[0].length; i++){
+        for(int row = 0; row < xy.length; row++){
+            sum += xy[row][i];
+        }
+       temp[i] = (sum)/(xy[0].length);
+       sum = 0;
+    }
+
+        return temp;
     }
 
     //this returns the values of each column in standard units
@@ -94,6 +105,7 @@ public class ReadData{
         // double[][] xy = getColumns(7,9);
         // double[][] xyStd = standardUnits(xy);
         // double correlation = correlation(xyStd);
+        //double[] xyStandDev = stdDeviation(xyStd);
         // double slope = correlation * xyStd[1] / xyStd[0];
         // double[] means = mean(xy)
         // double intercept = means[1] - slope * means[0];
