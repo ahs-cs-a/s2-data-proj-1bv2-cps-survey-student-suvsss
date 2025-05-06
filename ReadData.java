@@ -128,8 +128,6 @@ public class ReadData{
         System.out.println("Correlation: " + correlation);
         System.out.println("Slope: " + slope);
         System.out.println("Intercept: " + intercept);
-        Scatter s = new Scatter();
-        s.displayScatterPlot(xy[0], xy[1]);
     }
 
     //this prints the array passed in - you may want this for debugging
